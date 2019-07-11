@@ -1,0 +1,35 @@
+main  {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section {
+  width: 200px;  
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  margin: 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* styling for pagination */
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+/* style active/current link */
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* add gray background color on mouseover */
+.pagination a:hover:not(.active) {
+  background-color: #dddddd;
+}

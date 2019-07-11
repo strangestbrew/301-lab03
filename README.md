@@ -2,17 +2,18 @@
 Lab 03
 
 Meyer Reset at https://meyerweb.com/eric/tools/css/reset/
+Pagination coding and CSS at https://www.w3schools.com/howto/howto_css_pagination.asp
 
 
 Number and name of feature: Pagination
 
 Estimate of time needed to complete: 1hr
 
-Start time: 9:41am
+Start time: 10:02
 
-Finish time: ____
+Finish time: 10:22
 
-Actual time needed to complete: _____
+Actual time needed to complete: 20mins
 
 
 
