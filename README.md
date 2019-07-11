@@ -20,13 +20,13 @@ Actual time needed to complete: 20mins
 
 Number and name of feature: Templating (Handlebar)
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 mins
 
-Start time: _____
+Start time: 10:45
 
-Finish time: _____
+Finish time: 11:42
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 hour
 
 
 
