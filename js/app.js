@@ -2,14 +2,31 @@
 
 console.log('hello');
 
-function NewData (idx) {
-  this.image_url = idx.image_url;
-  this.title = idx.title;
-  this.description = idx.description;
-  this.keyword = idx.keyword;
-  this.horns = idx.horns;
+// Refactored constructor function
+
+function DataSet(rawDataObject) {
+  for(let key in rawDataObject) {
+    this[key] = rawDataObject[key];
+  }
 }
-NewData.list = [];
+
+DataSet.prototype.toHTML = function() {
+  // Grabbing the template from the HTML
+  let template = $('#photo-template').html();
+  // Using handlebars to compile - TODO: initiate handlebar
+  let templateRender = Handlebars.compile(template);
+  // Returning HTML from this method
+  return templateRender(this);
+};
+
+// function NewData (idx) {
+//   this.image_url = idx.image_url;
+//   this.title = idx.title;
+//   this.description = idx.description;
+//   this.keyword = idx.keyword;
+//   this.horns = idx.horns;
+// }
+// NewData.list = [];
 
 // Use AJAX, specifically $.get(), to read the provided JSON file.
 function readFile(){
@@ -17,7 +34,7 @@ function readFile(){
     .then( data => {
       data.forEach(idx => {
         // Each object should become a new instance of a constructor function.
-        NewData.list.push(new NewData(idx));
+        DataSet.list.push(new DataSet(idx));
       });
     })
     .then(() => {
@@ -28,23 +45,22 @@ function readFile(){
 readFile();
 
 function renderImage() {
-  NewData.list.forEach(element => {
+  DataSet.list.forEach(element => {
     const $newImage = $('#photo-template').clone();
 
     $newImage.find('section').text(element.name);
     $newImage.find('h2').text(element.rank);
     $newImage.find('p').text(element.type);
-    $newImage.attr('data-type', NewData.list.type);
+    $newImage.attr('data-type', DataSet.list.type);
 
-    $('.NewData.lists').append($newImage);
+    $('.DataSet.lists').append($newImage);
 
   });
 
 }
 
 function displayPage () {
-  console.log(NewData.list);
-  NewData.list.forEach((image) => {
+  DataSet.list.forEach((image) => {
     const $newImage = $('#photo-template').clone();
 
     $newImage.find('h2').text(image.title);
