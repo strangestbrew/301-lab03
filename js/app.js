@@ -28,3 +28,12 @@ hornsDataSet.forEach(hornsObject => {
 hornsGallery.forEach(ourNewHornObject => {
   $('#hornsGallery').append(ourNewHornObject.toHTML());
 });
+
+//JS function to populate filter list
+var sel = $('<select>').appendTo('body');
+$(hornsDataSet).each(function() {
+  sel.append($('<option>').attr('value', this.keyword).text(this.text));
+});
+
+
+
